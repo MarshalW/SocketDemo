@@ -37,9 +37,8 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 io.of('/echo').on('connection', function (socket) {
     console.log('connected');
-    socket.on('echo', function (data) {
-        console.log('echo, user name: ' + data.name);
+    socket.on('echo', function (name,fn) {
+        console.log('收到来自'+name+'的消息。');
+        fn('好的'+name+'，收到回执！');
     });
-    socket.emit('hello', '这里是测试服务器');
-//    socket.volatile.emit('hello','这里是测试服务器');
 });
