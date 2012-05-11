@@ -45,4 +45,6 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 io.on('connection', function (socket) {
     console.log('>>>>>>>connected');
+
+    socket.broadcast.emit('hello',socket.id);
 });
