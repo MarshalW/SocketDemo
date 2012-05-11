@@ -7,17 +7,11 @@
 </head>
 <body>
 <script>
-    var socket = io.connect('');//连接当前服务器，不要写绝对地址
+    var socket = io.connect('http://192.168.1.101:3000/');//可以使用跨站socket
 
     socket.on('connect',function(){
-//        socket.emit('echo', 'marshal',function(data){
-//            console.log(data);
-//        });
         console.log('>>>>>>>>connect');
-    });
-
-    socket.on('hello',function(data){
-       console.log('hello, '+data);
+        socket.send('Hi!');
     });
 
 </script>
