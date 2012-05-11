@@ -7,12 +7,13 @@
 </head>
 <body>
 <script>
-    var socket = io.connect('/echo');//连接当前服务器，不要写绝对地址
+    var socket = io.connect('');//连接当前服务器，不要写绝对地址
 
     socket.on('connect',function(){
-        socket.emit('echo', 'marshal',function(data){
-            console.log(data);
-        });
+//        socket.emit('echo', 'marshal',function(data){
+//            console.log(data);
+//        });
+        console.log('>>>>>>>>connect');
     });
 
 </script>
